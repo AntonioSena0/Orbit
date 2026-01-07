@@ -1,7 +1,16 @@
 <details>
 <summary><b>🇧🇷 Português</b></summary>
 
-# Orbit | Gestão de Tarefas Interestelar
+<h1>
+  <img
+    src="https://github.com/user-attachments/assets/e0b61ee8-fa79-4794-9ace-79650a34a470"
+    width="100"
+    height="100"
+    align="center"
+    alt="Orbit Logo"
+  />
+  Orbit | Gestão de Tarefas Interestelar
+</h1>
 
 **Orbit** é um ecossistema completo de produtividade projetado para organizar o caos do dia a dia através de uma interface inspirada na exploração espacial. O sistema utiliza uma arquitetura moderna dividida entre um backend robusto em Spring Boot e um frontend dinâmico em Next.js.
 
@@ -81,7 +90,16 @@ A forma mais rápida de subir o ecossistema completo é utilizando o Docker Comp
 <details>
 <summary><b>🇺🇸 English</b></summary>
 
-# Orbit | Interstellar Task Management
+<h1>
+   <img
+    src="https://github.com/user-attachments/assets/e0b61ee8-fa79-4794-9ace-79650a34a470"
+    width="100"
+    height="100"
+    align="center"
+    alt="Orbit Logo"
+  />
+   Orbit | Interstellar Task Management
+</h1> 
 
 **Orbit** is a complete productivity ecosystem designed to organize the chaos of everyday life through a space-exploration-inspired interface. The system relies on a modern architecture split between a robust Spring Boot backend and a dynamic Next.js frontend.
 
