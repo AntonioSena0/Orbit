@@ -6,6 +6,8 @@ import java.util.UUID;
 import org.springframework.stereotype.Service;
 
 import com.orbit.orbit.dtos.tasks.TaskDTO;
+import com.orbit.orbit.exceptions.NotAuthorized;
+import com.orbit.orbit.exceptions.tasks.TaskAlreadyExistsException;
 import com.orbit.orbit.model.tasks.TaskModel;
 import com.orbit.orbit.repository.tasks.ITaskRepository;
 import com.orbit.orbit.service.users.UserService;
@@ -46,7 +48,7 @@ public class TaskService implements ITaskService{
         var existing = this.taskRepository.findByTitle(taskDto.title());
 
         if(existing.isPresent() && existing.get().getUser().getId().equals(user.getId())){
-            throw new RuntimeException("A tarefa já existe em sua órbita");
+            throw new TaskAlreadyExistsException("A tarefa já existe em sua órbita");
         }
 
         TaskModel newTask = new TaskModel();
@@ -70,7 +72,7 @@ public class TaskService implements ITaskService{
         TaskModel existingTask = this.findById(id);
 
         if(!existingTask.getUser().getId().equals(taskDto.userId())){
-            throw new RuntimeException("Acesso negado: você não é o comandante desta tarefa");
+            throw new NotAuthorized("Acesso negado: você não é o comandante desta tarefa");
         }
 
         if(taskDto.title() != null && !taskDto.title().equals(existingTask.getTitle())){
@@ -78,7 +80,7 @@ public class TaskService implements ITaskService{
             var existing = this.taskRepository.findByTitle(taskDto.title());
 
             if(existing.isPresent() && existing.get().getUser().getId().equals(taskDto.userId())){
-                throw new RuntimeException("Essa tarefa já existe em sua órbita");
+                throw new TaskAlreadyExistsException("Essa tarefa já existe em sua órbita");
             }
             existingTask.setTitle(taskDto.title());
         }
@@ -109,7 +111,7 @@ public class TaskService implements ITaskService{
         var task = this.findById(id);
 
         if(!task.getUser().getId().equals(userId)){
-            throw new RuntimeException("Você não tem permissão para modificar essa tarefa");
+            throw new NotAuthorized("Você não tem permissão para modificar essa tarefa");
         }
 
         this.taskRepository.delete(task);
@@ -123,7 +125,7 @@ public class TaskService implements ITaskService{
         TaskModel task = this.findById(id);
 
         if (!task.getUser().getId().equals(userId)) {
-            throw new RuntimeException("Acesso negado: Você não é o comandante desta unidade");
+            throw new NotAuthorized("Acesso negado: Você não é o comandante desta unidade");
         }
 
         task.setCompleted(!task.isCompleted());
