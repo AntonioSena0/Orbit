@@ -1,5 +1,5 @@
 <details>
-<summary><b>🇧🇷 Português</b></summary>
+<summary><b>Português</b></summary>
 
 <h1>
   <img
@@ -88,7 +88,7 @@ A forma mais rápida de subir o ecossistema completo é utilizando o Docker Comp
 </details>
 
 <details>
-<summary><b>🇺🇸 English</b></summary>
+<summary><b>English</b></summary>
 
 <h1>
    <img
