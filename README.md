@@ -60,7 +60,7 @@ A forma mais rápida de subir o ecossistema completo é utilizando o Docker Comp
 
 1. **Clone o repositório:**
    ```bash
-   git clone [https://github.com/seu-usuario/orbit.git](https://github.com/seu-usuario/orbit.git)
+   git clone https://github.com/AntonioSena0/orbit.git
    ```
 
 2. **Suba os containers:**
@@ -149,7 +149,7 @@ The fastest way to start the full ecosystem is by using Docker Compose:
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/your-username/orbit.git
+   git clone https://github.com/AntonioSena0/orbit.git
     ```
 
 2. **Start the containers:**
